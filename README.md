@@ -3,23 +3,25 @@ Este proyecto es para poder correr un docker que tiene una calculadora bàsica d
 
 Para poder crear y correr el servicio VertX desde un docker, seguir las siguientes instrucciones:
 
-1. Bajar docker
-docker pull dgpecurso01/examen
+	1. Bajar docker
+	docker pull dgpecurso01/examen
 
-2.Correr el docker en el puerto deseado
-docker run -it -p 8088:8080 -e PBA=prueba dgpecurso01/examen java -jar sample-1.0-SNAPSHOT-fat.jar 
+	2.Correr el docker en el puerto deseado
+	docker run -it -p 8088:8080 -e PBA=prueba dgpecurso01/examen java -jar sample-1.0-SNAPSHOT-fat.jar 
 
 Nota. elegir el puerto de su preferencia
 
 PARA BALANCEAR 6 CONTENEDORES CON HAPROXY:
 
-//instalar haproxy
-sudo apt-get install haproxy
-//dentro del documento descomentamos en .cfg y agregamos ENABLED=1
-sudo nano /etc/default/haproxy
+	//instalar haproxy
+	sudo apt-get install haproxy
+	//dentro del documento descomentamos en .cfg y agregamos ENABLED=1
+	sudo nano /etc/default/haproxy
 ***************************
 //dentro del documento
-sudo nano etc/haproxy/haproxy.cfg
+
+	sudo nano etc/haproxy/haproxy.cfg
+
 //escribimos lo siguiente (los puertos son de ejemplo)
 
 	frontend www
@@ -40,15 +42,17 @@ sudo nano etc/haproxy/haproxy.cfg
 *******************************************************
 
 //Iniciamos haproxy
->> sudo service haproxy start
-sudo service haproxy status
+
+	sudo service haproxy start
+	sudo service haproxy status
 //debe estar activo
 
 // El resultado se visualiza al actualizar en el navegador localhost:#### (Nùmero de puerto puesto en el archivo de haproxy)
 
 Al ingresar la liga, segùn sea el mètodo llamado:
-localhost:####/api/sumar?a=2&b=3
-localhost:####/api/restar?a=100&b=80
-localhost:####/api/multiplicar?a=5&b=20
-localhost:####/api/dividir?a=20&b=5
+
+	localhost:####/api/sumar?a=2&b=3
+	localhost:####/api/restar?a=100&b=80
+	localhost:####/api/multiplicar?a=5&b=20
+	localhost:####/api/dividir?a=20&b=5
 
