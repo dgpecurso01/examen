@@ -51,8 +51,8 @@ PARA BALANCEAR 6 CONTENEDORES CON HAPROXY:
 
 Al ingresar la liga, segùn sea el mètodo llamado:
 
-	localhost:####/api/sumar?a=2&b=3
-	localhost:####/api/restar?a=100&b=80
-	localhost:####/api/multiplicar?a=5&b=20
-	localhost:####/api/dividir?a=20&b=5
+	localhost:####/api/sumar?A=2&B=3
+	localhost:####/api/restar?A=100&B=80
+	localhost:####/api/multiplicar?A=5&B=20
+	localhost:####/api/dividir?A=20&B=5
 
